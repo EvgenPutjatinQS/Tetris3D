@@ -1,0 +1,74 @@
+Initialize engine version: 5.0.0f4 (5b98b70ebeb9)
+GfxDevice: creating device client; threaded=0
+d3d11: failed to create D3D11 device (0x887a0004)
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 9.0c [igdumd32.dll 8.15.10.1825]
+    Renderer: Mobile Intel(R) 945 Express Chipset Family
+    Vendor:   Intel
+    VRAM:     64 MB (via DXGI)
+    Caps:     Shader=20 DepthRT=0 NativeDepth=0 NativeShadow=0 DF16=0 INTZ=0 NULL=0 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Genius\Desktop\Tetris v.1.1\Tetris v.1.1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Genius\Desktop\Tetris v.1.1\Tetris v.1.1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Genius\Desktop\Tetris v.1.1\Tetris v.1.1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Genius\Desktop\Tetris v.1.1\Tetris v.1.1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Genius\Desktop\Tetris v.1.1\Tetris v.1.1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Genius\Desktop\Tetris v.1.1\Tetris v.1.1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.216 seconds
+desktop: 1280x800 60Hz; virtual: 1280x800 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Genius\Desktop\Tetris v.1.1\Tetris v.1.1_Data\Managed\System.Core.dll (this message is harmless)
+AppRoot::InitStates called
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Init+Tetris.MainMenuState
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Init+Tetris.GameMenuState
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+On Activate main menu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Platform assembly: C:\Users\Genius\Desktop\Tetris v.1.1\Tetris v.1.1_Data\Managed\System.dll (this message is harmless)
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.822505 ms
+Setting up 1 worker threads for Enlighten.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 189.
+Total: 0.569723 ms (FindLiveObjects: 0.039136 ms CreateObjectMapping: 0.032720 ms MarkObjects: 0.393930 ms  DeleteObjects: 0.093670 ms)
+
+  Thread -> id: 900 -> priority: 1 
+OnNewGameClicked 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+GameMenu MainMenu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+OnActivate
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 15.747581 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 191.
+Total: 0.553683 ms (FindLiveObjects: 0.044269 ms CreateObjectMapping: 0.019888 ms MarkObjects: 0.392646 ms  DeleteObjects: 0.088538 ms)
+
+OnNewGameClicked 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+On Exit Clicked 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
