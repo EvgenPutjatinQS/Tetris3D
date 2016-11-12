@@ -43,6 +43,32 @@ public class GameGridState : AppState {
     private int scoreTwoLine = 3;        
     private int scoerThreeLine = 5;
 
+    private float speedLevel_2 = 0.85f;
+    private float speedLevel_3 = 0.7f;
+    private float speedLevel_4 = 0.55f;
+    private float speedLevel_5 = 0.4f;
+    private float speedLevel_6 = 0.3f;
+    private float speedLevel_7 = 0.25f;
+    private float speedLevel_8 = 0.2f;
+    private float speedLevel_9 = 0.1f;
+
+    private int Level_2 = 2;
+    private int Level_3 = 3;
+    private int Level_4 = 4;
+    private int Level_5 = 5;
+    private int Level_6 = 6;
+    private int Level_7 = 7;
+    private int Level_8 = 8;
+    private int Level_9 = 9;
+
+    private string Mod_I = "ModI";
+    private string Mod_J = "ModJ";
+    private string Mod_L = "ModL";
+    private string Mod_O = "ModO";
+    private string Mod_S = "ModS";
+    private string Mod_T = "ModT";
+    private string Mod_Z = "ModZ";
+
     private GameObject _color;
     private Color color;
 
@@ -137,31 +163,31 @@ public class GameGridState : AppState {
         /// <param name="GO"></param>
         protected void InstantiateModel(string GO)
         {
-            if (GO == "ModI")
+            if (GO == Mod_I)
             {
                 UnityEngine.GameObject.Instantiate(_curModels._models[0], instPos, Quaternion.identity);
             }
-            if (GO == "ModJ")
+            if (GO == Mod_J)
             {
                 UnityEngine.GameObject.Instantiate(_curModels._models[1], instPos, Quaternion.identity);
             }
-            if (GO == "ModL")
+            if (GO == Mod_L)
             {
                 UnityEngine.GameObject.Instantiate(_curModels._models[2], instPos, Quaternion.identity);
             }
-            if (GO == "ModO")
+            if (GO == Mod_O)
             {
                 UnityEngine.GameObject.Instantiate(_curModels._models[3], instPos, Quaternion.identity);
             }
-            if (GO == "ModS")
+            if (GO == Mod_S)
             {
                 UnityEngine.GameObject.Instantiate(_curModels._models[4], instPos, Quaternion.identity);
             }
-            if (GO == "ModT")
+            if (GO == Mod_T)
             {
                 UnityEngine.GameObject.Instantiate(_curModels._models[5], instPos, Quaternion.identity);
             }
-            if (GO == "ModZ")
+            if (GO == Mod_Z)
             {
                 UnityEngine.GameObject.Instantiate(_curModels._models[6], instPos, Quaternion.identity);
             }
@@ -322,7 +348,6 @@ public class GameGridState : AppState {
             moveMod.transform.position += new Vector3(1, 0, 0);
             if (LimitedMove())
             {
-                
                 UpdatetGrid();
             }
             else
@@ -444,7 +469,7 @@ public class GameGridState : AppState {
         /// <returns>Возвращает значение расположения игровой модели на поле</returns>
         protected bool Border(Vector2 pos)
         {
-            return ((int)pos.x >= 0 && (int)pos.x < GameGridState.Width && (int)pos.y >= 0);
+            return (pos.x >= 0 && (int)pos.x < Width && pos.y >= 0);
         }
 
         /// <summary>
@@ -514,43 +539,43 @@ public class GameGridState : AppState {
 
             if (curScore == Mathf.Clamp(curScore, 11, 20))
             {
-                curLevel = 2;
-                speedFull = 0.85f;
+                curLevel = Level_2;
+                speedFull = speedLevel_2;
             }
             else if (curScore == Mathf.Clamp(curScore, 21, 30))
             {
-                curLevel = 3;
-                speedFull = 0.7f;
+                curLevel = Level_3;
+                speedFull = speedLevel_3;
             }
             else if (curScore == Mathf.Clamp(curScore, 41, 50))
             {
-                curLevel = 4;
-                speedFull = 0.55f;
+                curLevel = Level_4;
+                speedFull = speedLevel_4;
             }
             else if (curScore == Mathf.Clamp(curScore, 51, 60))
             {
-                curLevel = 5;
-                speedFull = 0.4f;
+                curLevel = Level_5;
+                speedFull = speedLevel_5;
             }
             else if (curScore == Mathf.Clamp(curScore, 61, 70))
             {
-                curLevel = 6;
-                speedFull = 0.3f;
+                curLevel = Level_6;
+                speedFull = speedLevel_6;
             }
             else if (curScore == Mathf.Clamp(curScore, 71, 80))
             {
-                curLevel = 7;
-                speedFull = 0.25f;
+                curLevel = Level_7;
+                speedFull = speedLevel_7;
             }
             else if (curScore == Mathf.Clamp(curScore, 81, 90))
             {
-                curLevel = 8;
-                speedFull = 0.2f;
+                curLevel = Level_8;
+                speedFull = speedLevel_8;
             }
             else if (curScore == Mathf.Clamp(curScore, 91, 100))
             {
-                curLevel = 9;
-                speedFull = 0.1f;
+                curLevel = Level_9;
+                speedFull = speedLevel_9;
             }
         } 
     }
