@@ -69,6 +69,11 @@ public class GameGridState : AppState {
     private string Mod_T = "ModT";
     private string Mod_Z = "ModZ";
 
+    private int Row_1 = 1;
+    private int Row_2 = 2;
+    private int Row_3 = 3;
+    private int Row_4 = 4;
+
     private GameObject _color;
     private Color color;
 
@@ -500,22 +505,22 @@ public class GameGridState : AppState {
             scoreText.text = "Score: " + curScore.ToString();
             if (countRow > 0)
             {
-                if (countRow == 1)
+                if (countRow == Row_1)
                 {
                     curScore += scoreOneLine;
                     curLine += countRow;
                 }
-                else if (countRow == 2)
+                else if (countRow == Row_2)
                 {
                     curScore += scoreTwoLine;
                     curLine += countRow;
                 }
-                else if (countRow == 3)
+                else if (countRow == Row_3)
                 {
                     curScore += scoerThreeLine;
                     curLine += countRow;
                 }
-                else if (countRow == 4)
+                else if (countRow == Row_4)
                 {
                     curScore += scoerThreeLine;
                     curLine += countRow;
