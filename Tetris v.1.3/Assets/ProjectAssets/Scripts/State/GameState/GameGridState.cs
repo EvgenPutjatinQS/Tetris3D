@@ -122,10 +122,6 @@ public class GameGridState : AppState {
                         }
                     }
                 }
-                if (_fadeDelta == true)
-                {
-                    AppRoot.Instance.StartCoroutine(Fade());
-                }
                 UpdateScore();
                 UpdateLevel();
             }
@@ -218,7 +214,7 @@ public class GameGridState : AppState {
         /// <summary>
         /// Удаление игровой модели и сдвиг ряда после плавного удаления модели
         /// </summary>
-        protected override IEnumerator DelRow()
+        protected IEnumerator DelRow()
         {
             for (int x = 0; x < Height; ++x)
             {
@@ -236,14 +232,17 @@ public class GameGridState : AppState {
         /// Плавное удаление ряда
         /// </summary>
         /// <returns>Возращает значение Alpha для цвета</returns>
-        protected override IEnumerator Fade()
+        protected IEnumerator Fade(GameObject og)
         {
-            for (int x = 0; x < Width; ++x)
+            do
             {
-                color = curModel.GetComponentInChildren<Renderer>().material.color;
+                Material mat = og.GetComponentInChildren<Renderer>().material;
+                color = mat.color;
                 color.a -= Time.fixedDeltaTime;
-                curModel.GetComponentInChildren<Renderer>().material.color = color;
+                mat.color = color;
+                yield return null;
             }
+            while (color.a >= 0);
             if (color.a < 0)
             {
                 AppRoot.Instance.StartCoroutine(DelRow());
@@ -280,7 +279,7 @@ public class GameGridState : AppState {
                 if (gridTransform[x, y] != null)
                 {
                         curModel = gridTransform[x, y].gameObject;
-                        AppRoot.Instance.StartCoroutine(Fade());
+                        AppRoot.Instance.StartCoroutine(Fade(curModel));
                         _fadeDelta = true;
                 }
             } 
