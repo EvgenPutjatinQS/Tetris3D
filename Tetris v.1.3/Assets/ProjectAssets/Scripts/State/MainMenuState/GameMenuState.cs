@@ -73,9 +73,5 @@ namespace Tetris
 
         public override void Update() { }
 
-        protected override IEnumerator Fade()
-        {
-            yield return null;
-        }
     }
 }

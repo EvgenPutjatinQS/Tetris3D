@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/ProjectAssets/Scene/GridGame.unity
+- path: Assets/ProjectAssets/Scene/root.unity
   isLoaded: 1
   isActive: 1

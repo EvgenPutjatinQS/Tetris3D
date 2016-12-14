@@ -73,10 +73,6 @@ namespace Tetris
             AppRoot.Instance.SetState(EAppStateId.InfoMenu);
         }
 
-        protected override IEnumerator Fade()
-        {
-            yield return null;
-        }
     }
 
 }
