@@ -30,7 +30,15 @@ namespace Tetris
             _dataGO = GameObject.Find(_sceneName);
         }
 
-        protected abstract IEnumerator Fade();
+        protected virtual IEnumerator DelRow()
+        {
+            yield return null;
+        }
+
+        protected virtual IEnumerator Fade()
+        {
+            yield return null;
+        }
 
         public EAppStateId ID {
             get {

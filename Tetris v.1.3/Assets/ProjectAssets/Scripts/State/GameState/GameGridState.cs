@@ -122,7 +122,10 @@ public class GameGridState : AppState {
                         }
                     }
                 }
-                AppRoot.Instance.StartCoroutine(Fade());
+                if (_fadeDelta == true)
+                {
+                    AppRoot.Instance.StartCoroutine(Fade());
+                }
                 UpdateScore();
                 UpdateLevel();
             }
@@ -215,7 +218,7 @@ public class GameGridState : AppState {
         /// <summary>
         /// Удаление игровой модели и сдвиг ряда после плавного удаления модели
         /// </summary>
-        protected void DelRow()
+        protected override IEnumerator DelRow()
         {
             for (int x = 0; x < Height; ++x)
             {
@@ -226,6 +229,7 @@ public class GameGridState : AppState {
                     --x;
                 }
             }
+            yield return null;
         }
         
         /// <summary>
@@ -234,21 +238,16 @@ public class GameGridState : AppState {
         /// <returns>Возращает значение Alpha для цвета</returns>
         protected override IEnumerator Fade()
         {
-            if (_fadeDelta == true)
+            for (int x = 0; x < Width; ++x)
             {
-                for (int x = 0; x < Width; ++x)
-                {
-                    color = curModel.GetComponentInChildren<Renderer>().material.color;
-                    color.a -= Time.deltaTime;
-                    curModel.GetComponentInChildren<Renderer>().material.color = color;
-                    Debug.Log(color.a);
-                }
-                if (color.a <= 0)
-                {
-                    DelRow();
-                    _fadeDelta = false;
-
-                }
+                color = curModel.GetComponentInChildren<Renderer>().material.color;
+                color.a -= Time.fixedDeltaTime;
+                curModel.GetComponentInChildren<Renderer>().material.color = color;
+            }
+            if (color.a < 0)
+            {
+                AppRoot.Instance.StartCoroutine(DelRow());
+                _fadeDelta = false;
             }
             yield return null;
         }
@@ -280,9 +279,9 @@ public class GameGridState : AppState {
             {
                 if (gridTransform[x, y] != null)
                 {
-                    curModel = gridTransform[x, y].gameObject;
-                    _fadeDelta = true;
-                    AppRoot.Instance.StartCoroutine(Fade());
+                        curModel = gridTransform[x, y].gameObject;
+                        AppRoot.Instance.StartCoroutine(Fade());
+                        _fadeDelta = true;
                 }
             } 
         }
@@ -373,9 +372,11 @@ public class GameGridState : AppState {
             {
                 moveMod.transform.position += new Vector3(0, 1, 0);
                 moveMod.tag = "NoModel";
-
+                if (_fadeDelta == false)
+                {
                     GetRandomNewModel();
                     DeleteRow();
+                }
 
                 if (UpLimitGrid())
                 {
