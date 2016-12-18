@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Orange
-  m_Shader: {fileID: 4800000, guid: c52a4eabe688c6442a09e36ca942613b, type: 3}
+  m_Shader: {fileID: 4800000, guid: f643b4b17799c94409f91e3eca9da672, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -75,6 +75,9 @@ Material:
       second: 1
     - first:
         name: _CurrAlpha
+      second: 1
+    - first:
+        name: _Current
       second: 1
     - first:
         name: _Cutoff
