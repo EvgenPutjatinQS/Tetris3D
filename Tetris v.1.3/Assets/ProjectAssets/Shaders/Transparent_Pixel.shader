@@ -1,4 +1,4 @@
-Shader "Unlit/Transparent_Pixel"
+﻿Shader "Unlit/NewUnlitShader"
 {
 	Properties
 	{
@@ -17,7 +17,6 @@ Shader "Unlit/Transparent_Pixel"
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-			#pragma multi_compile_fwdbase nolightmap nodirlightmap nodynlightmap novertexlight
 
 			#include "UnityCG.cginc"
 			#include "Lighting.cginc"
@@ -32,7 +31,7 @@ Shader "Unlit/Transparent_Pixel"
 			struct v2f
 			{
 				float2 uv : TEXCOORD0;
-                SHADOW_COORDS(1) // put shadows data into TEXCOORD1
+                SHADOW_COORDS(1)
                 fixed3 diff : COLOR0;
                 fixed3 ambient : COLOR1;
                 float4 pos : SV_POSITION; 
@@ -61,6 +60,7 @@ Shader "Unlit/Transparent_Pixel"
                 fixed shadow = SHADOW_ATTENUATION(i);
                 fixed3 lighting = i.diff * shadow + i.ambient;
                 col.rgb *= lighting;
+
 				float4 alpha;
 				alpha.rgb = col.rgb;
 				alpha.a = col.a * _Current;
@@ -68,6 +68,5 @@ Shader "Unlit/Transparent_Pixel"
 			}
 			ENDCG
 		}
-		UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
 	}
 }
